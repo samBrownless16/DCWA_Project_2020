@@ -1,0 +1,34 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="../stylesheets/styles.css">
+    </head>
+    <body>
+        <!-- Server Down Error Message Displays Here -->
+        <% if (code == "ECONNREFUSED") { %>
+            <h1>Error Message</h1>
+            <h3>Error: connect <%= code %> 127.0.0.1:27017</h3>
+        <% } else {%>
+            <h1>Heads Of State</h1>
+            <button onclick="window.location.href='http://localhost:3007/addleader'">Add Head Of State</button>
+            <br><br>
+            <table>
+                <tr>
+                    <th>Country Code</th>
+                    <th>Head of State</th>
+                    <th>Action</th>
+                    <th>Remove</th>
+                </tr>
+                <% leaders.forEach((leader) => { %>
+                    <tr>
+                        <td><%= leader._id %></td>
+                        <td><%= leader.headOfState %></td>
+                        <td><a href="http://localhost:3007/editleader/<%= leader._id %>">Update</a></td>
+                        <td><a href="http://localhost:3007/deleteleader/<%= leader._id %>">Delete</a></td>
+                    </tr>
+                <% }) %>
+            </table>
+        <% } %>
+        <br><br>
+        <a href="http://localhost:3007">Home</a><br>
+    </body>
+</html>

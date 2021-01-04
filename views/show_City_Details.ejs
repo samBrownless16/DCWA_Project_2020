@@ -1,0 +1,27 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="../stylesheets/styles.css">
+    </head>
+    <body>
+        <h1>All City Details</h1>
+        <% cityDetails.forEach((city) => { %>
+            <label>City Code:</label><br>
+            <input type="text" class="info" id="det_CityCode" name="det_CityCode" value="<%= city.cty_code %>"><br>
+            <label>City Name:</label><br>
+            <input type="text" class="info" id="det_CityName" name="det_CityName" value="<%= city.cty_name %>"><br>
+            <label>City Population:</label><br>
+            <input type="text" class="info" id="det_CityPop" name="det_CityPop" value="<%= city.population %>"><br>
+            <label>By the Sea:</label><br>
+            <input type="text" class="info" id="det_CityBySea" name="det_CityBySea" value="<%= city.isCoastal %>"><br>
+            <label>Area (km):</label><br>
+            <input type="text" class="info" id="det_CityArea" name="det_CityArea" value="<%= city.areaKM %>"><br><br><br>
+            <label>Country Code:</label><br>
+            <input type="text" class="info" id="det_CountryCode" name="det_CountryCode" value="<%= city.co_code %>"><br>
+            <label>Country Name:</label><br>
+            <input type="text" class="info" id="det_CountryName" name="det_CountryName" value="<%= city.co_name %>"><br>
+        <% }) %>
+        <br>
+        <a href="http://localhost:3007/listCities">Back</a>&emsp;
+        <a href="http://localhost:3007/">Home</a><br>
+    </body>   
+</html>

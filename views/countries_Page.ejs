@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="../stylesheets/styles.css">
+    </head>
+    <body>
+        <!-- Server Down Error Message Displays Here -->
+        <% if (code == "ECONNREFUSED") { %>
+            <h1>Error Message</h1>
+            <h3>Error: <%= call %> <%= code %> <%= address %>:<%= portNum %></h3>
+        <% } else {%>
+            <h1>Countries</h1>
+            <button onclick="window.location.href='http://localhost:3007/addcountry'">Add Country</button>
+            <br><br>
+            <table>
+                <tr>
+                    <th>Country Code</th>
+                    <th>Country Name</th>
+                    <th>Country Details</th>
+                    <th>Action</th>
+                    <th>Remove</th>
+                </tr>
+                <% countries.forEach((country) => { %>
+                    <tr>
+                        <td><%= country.co_code %></td>
+                        <td><%= country.co_name %></td>
+                        <td><%= country.co_details %></td>
+                        <td><a href="http://localhost:3007/editcountry/<%= country.co_code %>">Update</a></td>
+                        <td><a href="http://localhost:3007/deletecountry/<%= country.co_code %>">Delete</a></td>
+                    </tr>
+                <% }) %>
+            </table>
+        <% } %>
+        <br><br>
+        <a href="http://localhost:3007">Home</a><br>
+    </body>
+</html>

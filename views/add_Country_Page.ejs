@@ -1,0 +1,25 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="../stylesheets/styles.css">
+    </head>
+    <body>
+        <h1>Add Country</h1>
+        <!-- Error Messages Display Here -->
+        <% if (errorDesc != "") { %> 
+            <ul>
+                <li><%= errorDesc %></li>
+            </ul>
+        <% } %>   
+        <form action="/addcountry" method="POST">
+            <label>Country Code:</label><br>
+            <input type="text" class="info" id="countryCode" name="country_code"><br>
+            <label>Country Name:</label><br>
+            <input type="text" class="info" id="countryName" name="country_name"><br>
+            <label>Country Details:</label><br>
+            <textarea id="countryDetails" name="country_details"></textarea><br>           
+            <br><input type="submit" class="btn" value="Add">
+        </form>
+        <br>
+        <a href="http://localhost:3007">Home</a><br>
+    </body>   
+</html>

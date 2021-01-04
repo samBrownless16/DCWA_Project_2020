@@ -1,0 +1,12 @@
+table, th, td {
+    border: 1px solid black;
+}
+
+.info {
+    width: 15em;
+}
+
+textarea {
+    height: 5em;
+    width: 35em;
+}

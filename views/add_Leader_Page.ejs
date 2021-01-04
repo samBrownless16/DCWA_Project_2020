@@ -1,0 +1,23 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="../stylesheets/styles.css">
+    </head>
+    <body>
+        <h1>Add Head of State</h1>
+        <!-- Error Messages Display Here -->
+        <% if (errorDesc != "") { %> 
+            <ul>
+                <li><%= errorDesc %></li>
+            </ul>
+        <% } %>
+        <form action="/addleader" method="POST">
+            <label>Country Code:</label><br>
+            <input type="text" class="info" id="countryCode_id" name="_id"><br>
+            <label>Head of State:</label><br>
+            <input type="text" class="info" id="LeaderName" name="state_head"><br>           
+            <br><input type="submit" class="btn" value="Add">
+        </form>
+        <br>
+        <a href="http://localhost:3007">Home</a><br>
+    </body>   
+</html>

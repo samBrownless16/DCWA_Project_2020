@@ -1,0 +1,20 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="../stylesheets/styles.css">
+    </head>
+    <body>
+        <h1>Edit Leader</h1>
+        <% leaderDetails.forEach((leader) => { %>
+            <form action="/editleader/<%= leader._id %>" method="POST">
+                <label>Country Code:</label><br>
+                <input type="text" class="info" id="countryCode_id" name="_id" value="<%= leader._id %>" disabled><br>
+                <label>Head of State:</label><br>
+                <input type="text" class="info" id="LeaderName" name="state_head" value="<%= leader.headOfState %>"><br>          
+                <br><input type="submit" class="btn" value="Update">
+            </form>
+        <% }) %>
+        <br>
+        <a href="http://localhost:3007/listHeadsOfState">Back</a>&emsp;
+        <a href="http://localhost:3007">Home</a><br>
+    </body>   
+</html>

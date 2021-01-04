@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="../stylesheets/styles.css">
+    </head>
+    <body>
+        <h1>Edit Country</h1>
+        <% countryDetails.forEach((country) => { %>
+            <form action="/editcountry/<%= country.co_code %>" method="POST">
+                <label>Country Code:</label><br>
+                <input type="text" class="info" id="countryCode" name="country_code" value="<%= country.co_code %>" disabled><br>
+                <label>Country Name:</label><br>
+                <input type="text" class="info" id="countryName" name="country_name" value="<%= country.co_name %>" required><br>
+                <label>Country Details:</label><br>
+                <textarea id="countryDetails" name="country_details"><%= country.co_details %></textarea><br>           
+                <br><input type="submit" class="btn" value="Update">
+            </form>
+        <% }) %>
+        <br>
+        <a href="http://localhost:3007/listCountries">Back</a>&emsp;
+        <a href="http://localhost:3007">Home</a><br>
+    </body>   
+</html>
